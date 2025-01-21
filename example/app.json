@@ -17,7 +17,8 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "expo.modules.widgets.example"
+      "bundleIdentifier": "expo.modules.widgets.example",
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
       "adaptiveIcon": {
@@ -27,6 +28,8 @@
       "package": "expo.modules.widgets.example"
     },
     "plugins": [
+      "@react-native-firebase/app",
+      "@react-native-firebase/crashlytics",
       [
         "../app.plugin.js",
         {
@@ -46,6 +49,14 @@
                 "resourceName": "@xml/sample_widget_info"
               }
             ]
+          }
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
           }
         }
       ]
